@@ -1,0 +1,33 @@
+body, #container {
+  font-family: sans-serif;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+img {
+  border: 4px solid transparent;
+  margin: 16px;
+  width: 250px;
+}
+
+#container {
+  background: radial-gradient(circle at top right, #fff, #525252);
+  overflow: auto;
+}
+
+#output {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: magenta;
+  min-height: 1em;
+  padding: 0.5em 1em;
+}
+
+#canvas {
+  display: none;
+}
+
