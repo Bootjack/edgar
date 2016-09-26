@@ -86,6 +86,10 @@ IMAGES.forEach(function (src) {
     console.time('processing image ' + src);
 
     var edges = populateEdges(img);
+
+    console.timeEnd('processing image ' + src);
+    console.log(src + ': ' + img.width + 'x' + img.height);
+
     Object.keys(edges).forEach(function (edge) {
       var styleProp = 'border-' + edge + '-color';
       if (edges[edge]) {
@@ -97,9 +101,6 @@ IMAGES.forEach(function (src) {
         ')';
       }
     });
-
-    console.timeEnd('processing image ' + src);
-    console.log(img.width + 'x' + img.height);
 
     container.appendChild(img);
   }
