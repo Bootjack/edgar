@@ -26,7 +26,7 @@ function isEdgeClipped (data, getNextIndex) {
   index = getNextIndex();
   while (false !== index ) {
     pixel = pixelColor(data[index]);
-    if (pixel.alpha > 0) {
+    if (pixel.alpha > 20) {
       return pixel;
     }
     index = getNextIndex(index);
@@ -57,11 +57,11 @@ function populateEdges (img) {
 
   canvas = document.createElement('canvas');
 
-  canvas.height = img.naturalHeight;
-  canvas.width = img.naturalWidth;
+  canvas.height = 100;
+  canvas.width = 100;
   context = canvas.getContext('2d');
 
-  context.drawImage(img, 0, 0);
+  context.drawImage(img, 0, 0, canvas.width, canvas.height);
   imgData8Bit = context.getImageData(0, 0, canvas.width, canvas.height);
   imgData = {
     data: new Uint32Array(imgData8Bit.data.buffer),
@@ -69,8 +69,10 @@ function populateEdges (img) {
     width: imgData8Bit.width
   };
 
-  bottomLeft = (img.naturalHeight - 1) * (img.naturalWidth);
-  topRight = img.naturalWidth - 1;
+  console.log('imgData length: ' + imgData.data.length, imgData8Bit.height, imgData8Bit.width);
+
+  bottomLeft = (canvas.height - 1) * (canvas.width);
+  topRight = canvas.width - 1;
 
   return {
     top: isEdgeClipped(imgData.data, walkHorizontallyFn(0, imgData)),
