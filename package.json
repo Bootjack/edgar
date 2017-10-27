@@ -2,7 +2,7 @@
   "name": "edgar",
   "version": "1.0.2",
   "description": "Image edge transparency detection in the browser",
-  "main": "main.js",
+  "main": "dist/edgar.js",
   "dependencies": {
     "babel-core": "6.26.0",
     "babel-loader": "7.1.2",
