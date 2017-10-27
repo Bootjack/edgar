@@ -158,7 +158,7 @@ function populateEdges() {
   };
 }
 
-function testEdges(src, options) {
+var testEdges = exports.testEdges = function testEdges(src, options) {
   return new Promise(function (resolve, reject) {
     var img = new Image();
     img.addEventListener('load', function (evt) {
@@ -169,11 +169,7 @@ function testEdges(src, options) {
     });
     img.src = src;
   });
-}
-
-var edgar = { testEdges: testEdges };
-
-exports.default = edgar;
+};
 
 /***/ })
 /******/ ]);
