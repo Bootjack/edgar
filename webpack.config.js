@@ -5,7 +5,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'edgar.js',
-    library: 'umd'
+    library: 'edgar',
+    libraryTarget: 'umd'
   },
   module: {
     rules: [{

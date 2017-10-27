@@ -1,6 +1,6 @@
 {
   "name": "edgar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Image edge transparency detection in the browser",
   "main": "main.js",
   "dependencies": {
