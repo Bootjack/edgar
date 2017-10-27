@@ -42,8 +42,8 @@ function isEdgeClippedFn(data, options = {}) {
 function populateEdges(options = {}) {
   return function(img) {
     const canvas = document.createElement('canvas');
-    canvas.height = options.height || image.height;
-    canvas.width = options.width || image.width;
+    canvas.height = options.height || img.height;
+    canvas.width = options.width || img.width;
 
     const context = canvas.getContext('2d');
     context.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -69,7 +69,7 @@ function populateEdges(options = {}) {
   };
 }
 
-export const testEdges = function(src, options) {
+export function testEdges(src, options) {
   return new Promise(function(resolve, reject) {
     var img = new Image();
     img.addEventListener('load', evt => resolve(populateEdges(options)(img)));

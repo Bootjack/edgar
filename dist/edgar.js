@@ -83,6 +83,7 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.testEdges = testEdges;
 function pixelColor(pixel) {
   return {
     red: pixel & 255,
@@ -131,8 +132,8 @@ function populateEdges() {
 
   return function (img) {
     var canvas = document.createElement('canvas');
-    canvas.height = options.height || image.height;
-    canvas.width = options.width || image.width;
+    canvas.height = options.height || img.height;
+    canvas.width = options.width || img.width;
 
     var context = canvas.getContext('2d');
     context.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -158,7 +159,7 @@ function populateEdges() {
   };
 }
 
-var testEdges = exports.testEdges = function testEdges(src, options) {
+function testEdges(src, options) {
   return new Promise(function (resolve, reject) {
     var img = new Image();
     img.addEventListener('load', function (evt) {
@@ -169,7 +170,7 @@ var testEdges = exports.testEdges = function testEdges(src, options) {
     });
     img.src = src;
   });
-};
+}
 
 /***/ })
 /******/ ]);
