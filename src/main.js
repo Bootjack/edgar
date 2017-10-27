@@ -69,7 +69,7 @@ function populateEdges(options = {}) {
   };
 }
 
-export function testEdges(src, options) {
+function testEdges(src, options) {
   return new Promise(function(resolve, reject) {
     var img = new Image();
     img.addEventListener('load', evt => resolve(populateEdges(options)(img)));
@@ -77,3 +77,7 @@ export function testEdges(src, options) {
     img.src = src;
   });
 }
+
+const edgar = {testEdges};
+
+export default edgar;

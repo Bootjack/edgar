@@ -83,7 +83,6 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.testEdges = testEdges;
 function pixelColor(pixel) {
   return {
     red: pixel & 255,
@@ -171,6 +170,10 @@ function testEdges(src, options) {
     img.src = src;
   });
 }
+
+var edgar = { testEdges: testEdges };
+
+exports.default = edgar;
 
 /***/ })
 /******/ ]);

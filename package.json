@@ -1,12 +1,12 @@
 {
   "name": "edgar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Image edge transparency detection in the browser",
   "main": "main.js",
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1"
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.1"
   },
   "devDependencies": {
     "webpack": "3.8.1"
